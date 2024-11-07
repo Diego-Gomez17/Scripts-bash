@@ -1,0 +1,94 @@
+Principales operadores en Bash para comprobar archivos y cadenas
+
+Comprobaciones de archivos y directorios
+----------------------------------------
+1. -e: Comprueba si un archivo o directorio existe.
+   if [ -e archivo_o_directorio ]; then
+       echo "El archivo o directorio existe."
+   fi
+
+2. -f: Comprueba si un archivo existe y es un archivo regular (no un directorio).
+   if [ -f archivo ]; then
+       echo "Es un archivo regular."
+   fi
+
+3. -d: Comprueba si un directorio existe.
+   if [ -d directorio ]; then
+       echo "Es un directorio."
+   fi
+
+4. -r: Comprueba si el archivo tiene permisos de lectura.
+   if [ -r archivo ]; then
+       echo "El archivo se puede leer."
+   fi
+
+5. -w: Comprueba si el archivo tiene permisos de escritura.
+   if [ -w archivo ]; then
+       echo "El archivo se puede escribir."
+   fi
+
+6. -x: Comprueba si el archivo tiene permisos de ejecución.
+   if [ -x archivo ]; then
+       echo "El archivo se puede ejecutar."
+   fi
+
+Comprobaciones de cadenas
+-------------------------
+1. -z: Comprueba si una cadena está vacía.
+   cadena=""
+   if [ -z "$cadena" ]; then
+       echo "La cadena está vacía."
+   fi
+
+2. -n: Comprueba si una cadena no está vacía.
+   cadena="texto"
+   if [ -n "$cadena" ]; then
+       echo "La cadena no está vacía."
+   fi
+
+3. ==: Comprueba si dos cadenas son iguales.
+   cadena1="hola"
+   cadena2="hola"
+   if [ "$cadena1" == "$cadena2" ]; then
+       echo "Las cadenas son iguales."
+   fi
+
+4. !=: Comprueba si dos cadenas son diferentes.
+   cadena1="hola"
+   cadena2="mundo"
+   if [ "$cadena1" != "$cadena2" ]; then
+       echo "Las cadenas son diferentes."
+   fi
+
+Comparaciones numéricas
+-----------------------
+1. -eq: Comprueba si dos números son iguales.
+   if [ "$num1" -eq "$num2" ]; then
+       echo "Los números son iguales."
+   fi
+
+2. -ne: Comprueba si dos números son diferentes.
+   if [ "$num1" -ne "$num2" ]; then
+       echo "Los números son diferentes."
+   fi
+
+3. -lt: Comprueba si un número es menor que otro.
+   if [ "$num1" -lt "$num2" ]; then
+       echo "$num1 es menor que $num2."
+   fi
+
+4. -le: Comprueba si un número es menor o igual a otro.
+   if [ "$num1" -le "$num2" ]; then
+       echo "$num1 es menor o igual a $num2."
+   fi
+
+5. -gt: Comprueba si un número es mayor que otro.
+   if [ "$num1" -gt "$num2" ]; then
+       echo "$num1 es mayor que $num2."
+   fi
+
+6. -ge: Comprueba si un número es mayor o igual a otro.
+   if [ "$num1" -ge "$num2" ]; then
+       echo "$num1 es mayor o igual a $num2."
+   fi
+

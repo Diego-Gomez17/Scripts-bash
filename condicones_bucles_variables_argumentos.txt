@@ -1,0 +1,81 @@
+Conceptos básicos de Bash: Condiciones, Bucles, Variables y Argumentos
+
+1. Condiciones en Bash
+----------------------
+Las condiciones en Bash se usan dentro de estructuras como "if" para controlar el flujo del script.
+
+Ejemplo de if-else:
+   if [ "$VAR" == "valor" ]; then
+       echo "La variable tiene el valor esperado."
+   else
+       echo "La variable no tiene el valor esperado."
+   fi
+
+Ejemplo de if-elif-else:
+   if [ "$NUM" -lt 10 ]; then
+       echo "El número es menor que 10."
+   elif [ "$NUM" -eq 10 ]; then
+       echo "El número es igual a 10."
+   else
+       echo "El número es mayor que 10."
+   fi
+
+2. Bucles en Bash
+-----------------
+Los bucles permiten ejecutar una serie de comandos repetidamente hasta que se cumpla una condición.
+
+a) Bucle for:
+   for VAR in 1 2 3 4 5; do
+       echo "Valor: $VAR"
+   done
+
+b) Bucle while:
+   COUNT=1
+   while [ "$COUNT" -le 5 ]; do
+       echo "Número: $COUNT"
+       COUNT=$((COUNT + 1))
+   done
+
+c) Bucle until:
+   COUNT=1
+   until [ "$COUNT" -gt 5 ]; do
+       echo "Número: $COUNT"
+       COUNT=$((COUNT + 1))
+   done
+
+3. Variables en Bash
+--------------------
+Las variables en Bash almacenan valores que se pueden usar y modificar en un script.
+
+a) Definir una variable:
+   MI_VAR="Hola Mundo"
+   echo "$MI_VAR"
+
+b) Variables con valores numéricos:
+   NUM=5
+   let "NUM = NUM + 1"   # Incrementa en 1
+   NUM=$((NUM + 1))      # Otra forma de incrementar
+
+c) Variables de entorno:
+   export MI_VAR="valor"  # Hace que la variable esté disponible en scripts hijos
+   ./script_hijo.sh       # Ejecuta un scripts, el cual hereda el valor exportado
+
+4. Argumentos de línea de comandos
+----------------------------------
+Los argumentos permiten pasar valores externos al script.
+
+a) Acceder a argumentos:
+   $0  - El nombre del script
+   $1, $2, ... - Primer, segundo, etc. argumento
+   $@ - Todos los argumentos
+   $# - Número de argumentos
+
+Ejemplo de script con argumentos:
+   #!/bin/bash
+   echo "El nombre del script es: $0"
+   echo "Primer argumento: $1"
+   echo "Segundo argumento: $2"
+   echo "Todos los argumentos: $@"
+   echo "Número de argumentos: $#"
+
+
